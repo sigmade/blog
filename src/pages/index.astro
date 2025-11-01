@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Header from '../components/Header.astro';
 
 const allPosts = await getCollection('blog');
 const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -14,12 +15,12 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
   <link rel="stylesheet" href="/src/styles/global.css">
 </head>
 <body>
-  <header class="main-header">
-    <h1>Мой блог о разработке</h1>
-    <p>Статьи, уроки и мысли о коде.</p>
-  </header>
-
+  <Header active="articles" />
   <main>
+    <div class="page-header">
+      <h1>Мой блог о разработке</h1>
+      <p>Статьи, уроки и мысли о коде.</p>
+    </div>
     <section class="articles-grid">
       {sortedPosts.map(post => (
         <a href={`/blog/${post.slug}`} class="article-card">
@@ -42,3 +43,18 @@ const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pu
   </main>
 </body>
 </html>
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  .page-header p {
+    font-size: 1.2rem;
+    color: var(--muted-text-color);
+    margin-top: 0.5rem;
+  }
+</style>

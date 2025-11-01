@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
@@ -22,6 +23,7 @@ const { Content } = await entry.render();
   <link rel="stylesheet" href="/src/styles/global.css">
 </head>
 <body>
+  <Header />
   <header class="article-header">
     <div class="header-content">
       <a href="/" class="back-link">&larr; Назад ко всем статьям</a>

@@ -1,0 +1,12 @@
+---
+const { active } = Astro.props;
+---
+<header class="main-header">
+    <div class="nav-container">
+        <a href="/" class="logo">Мой Блог</a>
+        <nav class="main-nav">
+            <a href="/" class={active === 'articles' ? 'active' : ''}>Статьи</a>
+            <a href="/about" class={active === 'about' ? 'active' : ''}>Обо мне</a>
+        </nav>
+    </div>
+</header>
