@@ -3,14 +3,14 @@ title: "Second article"
 description: "Узнайте, как создать быстрый и современный блог с использованием Astro"
 pubDate: 2025-11-01
 author: "Автор"
-image: "/images/example.png"
+image: "/blog/images/example.png"
 ---
 
 # Введение в Astro
 
 Astro — это современный фреймворк для создания быстрых веб-сайтов с фокусом на контент.
 
-![Пример изображения](/images/example.png)
+![Пример изображения](/blog/images/example.png)
 
 ## Основные преимущества
 
